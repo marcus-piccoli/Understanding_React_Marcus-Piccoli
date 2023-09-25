@@ -504,3 +504,67 @@ body {
     background-position: right top; /* Posição da imagem de fundo */
 }
 ```
+
+# Flexbox em CSS
+
+## Conceito
+Flexbox, ou modelo de layout flexível, é um conceito em CSS que permite que você crie layouts complexos com mais eficiência e consistência. Ele é especialmente útil quando você precisa alinhar elementos de maneira proporcional e dinâmica ou precisa de um layout que se adapte a diferentes tamanhos de tela.
+
+## Principais Comandos
+
+### Container Flex
+Para começar a usar o flexbox, você precisa definir um container flex usando a propriedade `display` com o valor `flex` ou `inline-flex`.
+
+```css
+.container {
+    display: flex;
+}
+```
+
+### Direção Flex
+A propriedade `flex-direction` define a direção principal em que os itens flex são colocados no container flex. Os valores possíveis são `row` (padrão), `row-reverse`, `column` e `column-reverse`.
+
+```css
+.container {
+    flex-direction: row;
+}
+```
+
+### Envolvimento Flex
+A propriedade `flex-wrap` especifica se os itens flex devem ser forçados a uma única linha (não envolver) ou podem ser dispostos em várias linhas (envolver). Os valores possíveis são `nowrap` (padrão), `wrap` e `wrap-reverse`.
+
+```css
+.container {
+    flex-wrap: wrap;
+}
+```
+
+### Alinhamento Flex
+Existem várias propriedades para alinhar itens em um container flex:
+
+- `justify-content`: alinha os itens ao longo do eixo principal (por exemplo, da esquerda para a direita). Os valores possíveis incluem `flex-start`, `flex-end`, `center`, `space-between`, `space-around` e `space-evenly`.
+- `align-items`: alinha os itens ao longo do eixo transversal (por exemplo, de cima para baixo). Os valores possíveis incluem `stretch`, `flex-start`, `flex-end`, `center` e `baseline`.
+- `align-content`: alinha as linhas de envolvimento ao longo do eixo transversal. Isso só tem efeito se houver várias linhas de envolvimento. Os valores possíveis são os mesmos que para `align-items`.
+
+```css
+.container {
+    justify-content: space-between;
+    align-items: center;
+}
+```
+
+### Itens Flex
+Os itens flex podem ter as seguintes propriedades:
+
+- `order`: especifica a ordem de um item em relação aos outros itens no container flex.
+- `flex-grow`: especifica quanto um item deve crescer em relação aos outros itens, se houver espaço extra disponível.
+- `flex-shrink`: especifica quanto um item deve encolher em relação aos outros itens, se o espaço for limitado.
+- `flex-basis`: especifica o tamanho inicial de um item antes de o espaço restante ser distribuído.
+- `flex`: é uma abreviação para definir as três propriedades anteriores de uma vez. O valor é uma lista separada por espaços de três valores correspondendo a `flex-grow`, `flex-shrink` e `flex-basis`.
+
+```css
+.item {
+    order: 2;
+    flex: 1 1 auto;
+}
+```
